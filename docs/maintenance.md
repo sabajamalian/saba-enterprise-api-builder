@@ -41,6 +41,11 @@ minor version for compatible additions, and a major version for changes that
 require consumer migration. Those are maintenance conventions, not automated
 guarantees about agent output.
 
+Publish annotated Git tags matching the package version, such as `v0.1.0`.
+Never move or overwrite an existing version tag. APM resolves the tag to an
+exact commit in each consumer's lockfile. Configure tag protection through
+repository rulesets if required by your release policy.
+
 Every requirement change should include its rationale, updated artifact,
 reference implementation/test change where applicable, and consumer action.
 New instructions do not themselves modify existing endpoints.
@@ -66,11 +71,11 @@ and does not claim to produce a restorable APM bundle.
 
 ## Release checklist
 
-The initial package source is published at
-[`9789b7f`](https://github.com/sabajamalian/saba-enterprise-api-builder/commit/9789b7ff28cef857c989e7d83d558d9202603c4d).
-The installation guides pin that commit. A remote install, audit, and frozen
-reinstall succeeded with APM 0.30.0; organization-policy enforcement was not
-established by those package-integrity checks.
+The installation guides use the
+[`v0.1.0` Git tag](https://github.com/sabajamalian/saba-enterprise-api-builder/tree/v0.1.0).
+Consumers commit the APM lockfile to retain the exact resolved commit and
+content hashes. Package-integrity checks do not establish organization-policy
+enforcement.
 
 1. Decide the license before adding a license grant or publishing reusable
    release assets. Public source visibility alone does not grant reuse rights.
@@ -79,11 +84,11 @@ established by those package-integrity checks.
 3. Run both CI jobs against the release candidate and review all standards gaps.
 4. Confirm the version, changelog/release description, and consumer migration
    requirements. Create a tag/release only with maintainer approval.
-5. Install the published full commit SHA into a clean external consumer and
-   repeat the audit/reinstall checks before advertising that pin.
+5. Install the published version tag into a clean external consumer, confirm its
+   resolved commit in the lockfile, and repeat the audit/reinstall checks.
 
-No release tag is presumed to exist. Consumers can use the published commit
-directly or evaluate authorized local changes before selecting a new pin.
+The Git tag is sufficient for APM installation. A GitHub Release with downloadable
+assets is optional and is not created automatically.
 
 ## Administrative controls
 

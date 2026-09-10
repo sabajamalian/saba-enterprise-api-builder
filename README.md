@@ -57,7 +57,7 @@ The package is a classic APM directory with `apm.yml` and `.apm/`.
 Install the published package from your consumer repository:
 
 ```sh
-apm install sabajamalian/saba-enterprise-api-builder#9789b7ff28cef857c989e7d83d558d9202603c4d --target copilot
+apm install sabajamalian/saba-enterprise-api-builder#v0.1.0 --target copilot
 ```
 
 Or declare the same pinned dependency in the consumer's `apm.yml`:
@@ -68,16 +68,17 @@ version: 0.1.0
 targets: [copilot]
 dependencies:
   apm:
-    - sabajamalian/saba-enterprise-api-builder#9789b7ff28cef857c989e7d83d558d9202603c4d
+    - sabajamalian/saba-enterprise-api-builder#v0.1.0
 ```
 
 Run `apm install` using the APM version in [`.apm-version`](.apm-version).
-This pins the [initial package commit](https://github.com/sabajamalian/saba-enterprise-api-builder/commit/9789b7ff28cef857c989e7d83d558d9202603c4d),
-so subsequent changes to `main` don't silently change the installed artifacts.
+This selects [version v0.1.0](https://github.com/sabajamalian/saba-enterprise-api-builder/tree/v0.1.0).
+APM records the resolved commit and content hashes in `apm.lock.yaml`; commit
+that lockfile so subsequent installs use the same artifacts.
 
-The package is available directly from GitHub; a release tag is not required.
-See [adoption](docs/adoption.md) for local development, updates, and client
-boundaries.
+The version is a Git tag, so a GitHub Release or separate package registry isn't
+required. See [adoption](docs/adoption.md) for local development, updates, and
+client boundaries.
 
 ## Run the reference API
 

@@ -9,7 +9,7 @@ installed on the maintainer's machine.
 Install the published package from your consumer repository:
 
 ```sh
-apm install sabajamalian/saba-enterprise-api-builder#9789b7ff28cef857c989e7d83d558d9202603c4d --target copilot
+apm install sabajamalian/saba-enterprise-api-builder#v0.1.0 --target copilot
 ```
 
 Alternatively, declare the same dependency in the consumer manifest:
@@ -20,12 +20,12 @@ version: 0.1.0
 targets: [copilot]
 dependencies:
   apm:
-    - sabajamalian/saba-enterprise-api-builder#9789b7ff28cef857c989e7d83d558d9202603c4d
+    - sabajamalian/saba-enterprise-api-builder#v0.1.0
 ```
 
-The reference pins the initial published artifact commit, independently of
-subsequent changes to `main`. No release tag is needed. With the manifest in
-place, run:
+The reference selects the `v0.1.0` Git tag. APM pins its resolved commit and
+content hashes in the consumer lockfile, independently of subsequent changes
+to `main`. With the manifest in place, run:
 
 ```sh
 apm install
@@ -48,8 +48,8 @@ To evaluate uncommitted artifact changes, replace the remote dependency in the
 consumer manifest with `../saba-enterprise-api-builder` and run `apm install`.
 That example assumes the consumer and package checkout are sibling directories.
 Adjust the path for your layout, keeping the package directory's name at the end.
-Local dependency locks record local provenance; switch back to a reviewed Git
-commit pin before distributing the configuration to your team.
+Local dependency locks record local provenance; switch back to a reviewed
+version tag or full commit pin before distributing the configuration to your team.
 
 ## Developer
 
@@ -81,8 +81,10 @@ The package's own local integrity checks are not an organizational allowlist.
 
 ## Updates and rollback
 
-Change the consumer's pinned reference through a reviewed PR, run APM, inspect
-the generated diff, and run the service checks. Reading a new instruction does
+Change the consumer's version tag through a reviewed PR, run APM, inspect the
+manifest, lockfile, and generated diff, and run the service checks. Published
+version tags must not be moved; publish a new version for changes.
+Reading a new instruction does
 not automatically migrate existing application code; use the designer/builder
 workflow for any required behavioral change.
 
