@@ -1,0 +1,10 @@
+name: saba-enterprise-api-builder
+version: 0.1.0
+description: API design, implementation, and review artifacts for Saba Enterprise.
+author: Saba Enterprise (hypothetical)
+dependencies:
+  apm: []
+targets:
+  - copilot
+includes:
+  - .apm/**

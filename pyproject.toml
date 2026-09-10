@@ -1,0 +1,9 @@
+[project]
+name = "saba-enterprise-api-builder"
+version = "0.1.0"
+description = "Maintainer tooling for Saba Enterprise API artifacts"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.uv]
+package = false

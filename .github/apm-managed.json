@@ -1,0 +1,23 @@
+{
+  "format": 1,
+  "files": {
+    ".agents/skills/saba-design-endpoint/SKILL.md": "64387bc053c3370f73076ed176e98adb952df2ffaa9c0817e264fef8e581ec2c",
+    ".agents/skills/saba-design-endpoint/references/contract-template.md": "053c45212012876b1e9f186763c89f4bc21881869b0fb90438017bdfe4800439",
+    ".agents/skills/saba-implement-fastapi-endpoint/SKILL.md": "fc7a957370c3ac9eff753d7a0f4fb77942d4929bd744d977875709cff68070e9",
+    ".agents/skills/saba-implement-fastapi-endpoint/references/implementation-checklist.md": "e2e593f81ae611cd6bb17848a15dc26576d08ed9226ee0cf6b5c2d6f07b909ee",
+    ".agents/skills/saba-verify-api/SKILL.md": "c29fda4eaacfc38de5c09470c35b8fa8df80a6a39f7f17a3914983eb39f259ef",
+    ".agents/skills/saba-verify-api/references/verification-matrix.md": "a9951d80ce73e600d620b4733601e33d8bb5730127ada3e28a8993b2ea970918",
+    ".github/agents/saba-api-builder.agent.md": "7cf6d3ef434cc75a01da8b26b1a986a72d39cdf52686c7fe577ec4151d5fcb04",
+    ".github/agents/saba-api-designer.agent.md": "f3c35259f07664c942cf496d9e611031f6805848e5efd0414f43eb1981734b42",
+    ".github/agents/saba-api-reviewer.agent.md": "c962a3c850841b86662d96b5354737a109d4cb2f08901e3c32d0b03de036a50f",
+    ".github/instructions/saba-api-contract.instructions.md": "b29f6a7e824aa1451571354d089e5f53a5e3b6070b4af6c52aed8f9bdd91edc0",
+    ".github/instructions/saba-api-observability.instructions.md": "f97a3d1c79b0acac6f1c5d3156035b8defb3d841b5252bf64a3992e5f9e6e3b2",
+    ".github/instructions/saba-api-security.instructions.md": "8aeadf3fef14faa2932a2728da4da81ee75cd55077840282d4a3ccba650922a1",
+    ".github/instructions/saba-api-testing.instructions.md": "6cfd7ca8d81cd435e4a5b0e353439746323b8810cf414ef0d565b85292e9ec04",
+    ".github/instructions/saba-fastapi.instructions.md": "e103b8ff90da3c1818c76fbc2227a4c3a48cc137e1171e28b91f7cc59f0dbc46",
+    ".github/prompts/saba-build-endpoint.prompt.md": "2900419a5ea68adffc7b77106409c6c88c5765a8e09fb083d2d0b2df0bbfc14f",
+    ".github/prompts/saba-design-endpoint.prompt.md": "001539818c7b5c7dbd55b208d342be698dd58eb294dc75acee32404fac1237a5",
+    ".github/prompts/saba-review-endpoint.prompt.md": "8b2e10433ac7cd06dd29d5dfb89129a27c6af7fac7bcf75bb0e8678ae44aa059",
+    "apm.lock.yaml": "120941c3d12d3686414a54623e88b7473a8ace0afdffc899786faae3b98e1748"
+  }
+}
