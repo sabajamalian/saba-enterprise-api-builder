@@ -64,19 +64,26 @@ generated a plugin manifest rather than the requested APM archive during local
 verification. This project therefore distributes classic Git/source packages
 and does not claim to produce a restorable APM bundle.
 
-## First publication checklist
+## Release checklist
+
+The initial package source is published at
+[`9789b7f`](https://github.com/sabajamalian/saba-enterprise-api-builder/commit/9789b7ff28cef857c989e7d83d558d9202603c4d).
+The installation guides pin that commit. A remote install, audit, and frozen
+reinstall succeeded with APM 0.30.0; organization-policy enforcement was not
+established by those package-integrity checks.
 
 1. Decide the license before adding a license grant or publishing reusable
    release assets. Public source visibility alone does not grant reuse rights.
-2. Review and merge the implementation into the renamed repository.
+2. Review and merge any package changes, then choose a release candidate from
+   `main`.
 3. Run both CI jobs against the release candidate and review all standards gaps.
 4. Confirm the version, changelog/release description, and consumer migration
    requirements. Create a tag/release only with maintainer approval.
 5. Install the published full commit SHA into a clean external consumer and
    repeat the audit/reinstall checks before advertising that pin.
 
-No release tag is presumed to exist. Consumers can evaluate an authorized local
-checkout before publication.
+No release tag is presumed to exist. Consumers can use the published commit
+directly or evaluate authorized local changes before selecting a new pin.
 
 ## Administrative controls
 

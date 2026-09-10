@@ -35,8 +35,10 @@ destinations are rejected. Unrelated files are preserved.
 The consumer smoke check uses a different project directory and an actual APM
 local dependency. It checks installation, frozen replay, preservation of an
 existing team agent, and rejection of an edited managed agent during audit.
-It exercises local-source portability. A published Git pin requires a separate
-post-publication installation check.
+It exercises local-source portability. The published Git pin in
+[adoption](adoption.md) also passed a separate remote installation, audit, and
+frozen replay. Repeat that remote check when publishing a new consumer pin;
+the local smoke check does not fetch GitHub.
 
 ## Endpoint workflow
 

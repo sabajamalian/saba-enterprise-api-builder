@@ -6,12 +6,13 @@ Install the APM release recorded in `.apm-version`. Select the Copilot target
 explicitly so deployment does not vary with whichever clients happen to be
 installed on the maintainer's machine.
 
-Before publication, use the local dependency example in the root README.
-The consumer directory and package directory should be siblings, with the path
-ending in the package directory's name. Local dependency locks record local
-provenance; they are not immutable remote release pins.
+Install the published package from your consumer repository:
 
-Once an approved package commit is published, a consumer manifest can use:
+```sh
+apm install sabajamalian/saba-enterprise-api-builder#9789b7ff28cef857c989e7d83d558d9202603c4d --target copilot
+```
+
+Alternatively, declare the same dependency in the consumer manifest:
 
 ```yaml
 name: payments-service
@@ -19,10 +20,12 @@ version: 0.1.0
 targets: [copilot]
 dependencies:
   apm:
-    - sabajamalian/saba-enterprise-api-builder#COMMIT_SHA
+    - sabajamalian/saba-enterprise-api-builder#9789b7ff28cef857c989e7d83d558d9202603c4d
 ```
 
-Replace `COMMIT_SHA` with a published full commit SHA before running:
+The reference pins the initial published artifact commit, independently of
+subsequent changes to `main`. No release tag is needed. With the manifest in
+place, run:
 
 ```sh
 apm install
@@ -38,6 +41,15 @@ continuing; do not use `--force` to dismiss them.
 The package contains no MCP servers, executable install hooks, identity-provider
 configuration, or Python application dependencies. Installing it does not add
 the reference application or its CI workflow to your service.
+
+## Local package development
+
+To evaluate uncommitted artifact changes, replace the remote dependency in the
+consumer manifest with `../saba-enterprise-api-builder` and run `apm install`.
+That example assumes the consumer and package checkout are sibling directories.
+Adjust the path for your layout, keeping the package directory's name at the end.
+Local dependency locks record local provenance; switch back to a reviewed Git
+commit pin before distributing the configuration to your team.
 
 ## Developer
 

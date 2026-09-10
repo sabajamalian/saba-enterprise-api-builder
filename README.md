@@ -54,7 +54,13 @@ Repository maintainers use [Microsoft APM](https://github.com/microsoft/apm) to
 install the package, review the generated files, and commit them for their team.
 The package is a classic APM directory with `apm.yml` and `.apm/`.
 
-For unpublished/local development, add this to a consumer's `apm.yml`:
+Install the published package from your consumer repository:
+
+```sh
+apm install sabajamalian/saba-enterprise-api-builder#9789b7ff28cef857c989e7d83d558d9202603c4d --target copilot
+```
+
+Or declare the same pinned dependency in the consumer's `apm.yml`:
 
 ```yaml
 name: my-service
@@ -62,17 +68,16 @@ version: 0.1.0
 targets: [copilot]
 dependencies:
   apm:
-    - ../saba-enterprise-api-builder
+    - sabajamalian/saba-enterprise-api-builder#9789b7ff28cef857c989e7d83d558d9202603c4d
 ```
 
-Run `apm install` from that consumer using the version in
-[`.apm-version`](.apm-version). The local dependency path must point to this
-checkout and end with its directory name.
+Run `apm install` using the APM version in [`.apm-version`](.apm-version).
+This pins the [initial package commit](https://github.com/sabajamalian/saba-enterprise-api-builder/commit/9789b7ff28cef857c989e7d83d558d9202603c4d),
+so subsequent changes to `main` don't silently change the installed artifacts.
 
-After the package content is published, consumers can replace the local path
-with `sabajamalian/saba-enterprise-api-builder#COMMIT_SHA`, substituting a full
-published commit SHA. No release tag is assumed to exist. See
-[adoption](docs/adoption.md) for installation, updates, and client boundaries.
+The package is available directly from GitHub; a release tag is not required.
+See [adoption](docs/adoption.md) for local development, updates, and client
+boundaries.
 
 ## Run the reference API
 
